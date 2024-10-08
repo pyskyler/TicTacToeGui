@@ -37,6 +37,7 @@ public class TicTacToeFrame extends JFrame
                 TicTacToeTile tile = new TicTacToeTile(row, col);
 
                 tile.addActionListener(e -> {
+                    if (!tile.getText().equals(" ")) {return;}
                     tile.setText(player);
                     logicBoard[tile.getRow()][tile.getCol()] = player;
                     checkGameState();
